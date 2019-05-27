@@ -38,7 +38,7 @@ export default class TelephoneFormat extends Component {
     }
 
     componentDidMount() {
-
+        console.log('子组件挂载完毕')
     }
 
     /*

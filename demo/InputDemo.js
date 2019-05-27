@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 //导入自定义组件
-import Example from '../components/TelephoneFormat.js';
+import TelephoneFormat from '../components/TelephoneFormat.js';
 
 export default class App extends Component {
 
@@ -28,6 +28,9 @@ export default class App extends Component {
     });
   }
 
+  componentDidMount() {
+    console.log('父组件挂载完毕')
+  }
 
   render() {
     return (
@@ -46,20 +49,19 @@ export default class App extends Component {
           <Text >
             非展示数据 {this.state.changeVal}
           </Text>
-          <Example name="默认格式不加密" getResult={(val, name) => {
+          <TelephoneFormat name="默认格式不加密" getResult={(val, name) => {
             this.handleChange(val, name)
-          }}></Example>
-          <Example name="默认格式加密前三位" isSecret={true} getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="默认格式加密中间四位" isSecret={true} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="默认格式加密后四位" isDefault={true} isSecret={true} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="分段格式不加密" isDefault={false} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
-          ></Example>
-          <Example name="分段格式加密前三位" isDefault={false} isSecret={true} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
-          ></Example>
-          <Example name="分段格式加密中间四位" isDefault={false} isSecret={true} maxLength={13} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }}></Example>
-          <Example name="分段格式加密后四位" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }}
+          }}></TelephoneFormat>
+          <TelephoneFormat name="默认格式加密前三位" isSecret={true} getResult={(val, name) => { this.handleChange(val, name) }} ></TelephoneFormat>
+          <TelephoneFormat name="默认格式加密中间四位" isSecret={true} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }} ></TelephoneFormat>
+          <TelephoneFormat name="默认格式加密后四位" isDefault={true} isSecret={true} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }} ></TelephoneFormat>
+          <TelephoneFormat name="分段格式不加密" isDefault={false} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }} ></TelephoneFormat>
+          <TelephoneFormat name="分段格式加密前三位" isDefault={false} isSecret={true} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
+          ></TelephoneFormat>
+          <TelephoneFormat name="分段格式加密中间四位" isDefault={false} isSecret={true} maxLength={13} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }}></TelephoneFormat>
+          <TelephoneFormat name="分段格式加密后四位" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }}
           //ref = {this.textInput}
-          ></Example>
+          ></TelephoneFormat>
           <Text style={styles.welcome}>Demo页面</Text>
         </View>
       </ScrollView >
