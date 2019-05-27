@@ -41,21 +41,23 @@ export default class App extends Component {
       >
         <View style={styles.container}>
           <Text >
-            父组件中{this.state.name}
-            非展示数据{this.state.changeVal}
+            父组件中 {this.state.name}
           </Text>
-          <Example name="default" getResult={(val, name) => {
+          <Text >
+            非展示数据 {this.state.changeVal}
+          </Text>
+          <Example name="默认格式不加密" getResult={(val, name) => {
             this.handleChange(val, name)
           }}></Example>
-          <Example name="default1" isSecret={true} getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="default2" isSecret={true} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="default3" isDefault={true} isSecret={true} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
-          <Example name="segment" isDefault={false} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
+          <Example name="默认格式加密前三位" isSecret={true} getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
+          <Example name="默认格式加密中间四位" isSecret={true} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
+          <Example name="默认格式加密后四位" isDefault={true} isSecret={true} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }} ></Example>
+          <Example name="分段格式不加密" isDefault={false} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
           ></Example>
-          <Example name="segment1" isDefault={false} isSecret={true} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
+          <Example name="分段格式加密前三位" isDefault={false} isSecret={true} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
           ></Example>
-          <Example name="segment2" isDefault={false} isSecret={true} maxLength={13} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }}></Example>
-          <Example name="segment3" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }}
+          <Example name="分段格式加密中间四位" isDefault={false} isSecret={true} maxLength={13} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }}></Example>
+          <Example name="分段格式加密后四位" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }}
           //ref = {this.textInput}
           ></Example>
           <Text style={styles.welcome}>Demo页面</Text>
