@@ -36,9 +36,6 @@ export default class App extends Component {
     return (
       <ScrollView
         contentContainerStyle={styles.contentContainer}
-
-        //keyboardShouldPersistTaps='never'
-        //keyboardDismissMode='on-drag' 
         showsVerticalScrollIndicator={true}
         scrollEnabled={true}
       >
@@ -59,9 +56,7 @@ export default class App extends Component {
           <TelephoneFormat name="分段格式加密前三位" isDefault={false} isSecret={true} maxLength={13} getResult={(val, name) => { this.handleChange(val, name) }}
           ></TelephoneFormat>
           <TelephoneFormat name="分段格式加密中间四位" isDefault={false} isSecret={true} maxLength={13} mode="hideMiddle" getResult={(val, name) => { this.handleChange(val, name) }}></TelephoneFormat>
-          <TelephoneFormat name="分段格式加密后四位" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }}
-          //ref = {this.textInput}
-          ></TelephoneFormat>
+          <TelephoneFormat name="分段格式加密后四位" isDefault={false} isSecret={true} maxLength={13} mode="hideTail" getResult={(val, name) => { this.handleChange(val, name) }} ></TelephoneFormat>
           <Text style={styles.welcome}>Demo页面</Text>
         </View>
       </ScrollView >

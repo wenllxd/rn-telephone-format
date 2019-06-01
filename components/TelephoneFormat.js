@@ -143,7 +143,6 @@ export default class TelephoneFormat extends Component {
             <View style={styles.container}>
 
                 <TextInput
-                    //ref={this.textInput}
                     style={styles.inputStyle}
                     maxLength={this.props.maxLength}
                     placeholder='18100000000'
@@ -163,7 +162,7 @@ export default class TelephoneFormat extends Component {
     }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         //flex: 1,
         justifyContent: 'center',
