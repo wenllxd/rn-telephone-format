@@ -21,8 +21,7 @@ export default class App extends Component {
             <View style={styles.container}>
 
                 <Progress style={styles.progress}>
-                    <span>hello</span>
-                    <span>hello2</span>
+
                 </Progress>
             </View>
 

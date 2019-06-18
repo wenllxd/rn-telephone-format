@@ -7,8 +7,6 @@ import { View, Text, StyleSheet, ART, ProgressViewIOS } from 'react-native';
 import { exportDefaultSpecifier } from '@babel/types';
 
 
-
-
 var {
     Surface, // 一个矩形可渲染的区域，是其他元素的容器
     Shape, // 形状定义，可填充
@@ -88,7 +86,6 @@ export default class Progress extends Component {
         path.arc(0, 100, 50);  // 将(50,0)看成新的坐标系(0,0),由此进行 顺时针 (100正) 的画半弧
         path.arc(0, -100, 50); // 将(0,100)看成新的坐标系(0,0)，由此进行 逆时针 (-100负)的画半弧
         path.close(); // 闭合
-        //console.log(this.props.children);
 
         const path2 = new Path(); // 固定内圈
         path2.moveTo(50, 5); // 
